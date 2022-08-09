@@ -24,4 +24,9 @@ You can find the actions you can take below;
 
 
 while True:
+  action = int(input("Please choose your action:"))
   
+  if action == 0 :
+    print("Exitting the program...)
+    sleep(1)
+    print("The prgoram has been closed... See you later!")
