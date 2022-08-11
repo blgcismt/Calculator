@@ -20,21 +20,21 @@ while True :
   
   if guess < random_number :
     print("Checking your number...")
-    time.sleep(2)
+    time.sleep(1)
     print("Please enter a bigger number...")
     guesses -=1
     print("Number of guesses left : ",guesses)
     
   elif guess > random_number :
     print("Checking your number...")
-    time.sleep(2)
+    time.sleep(1)
     print("Please enter a smaller number...")
     guesses -=1
     print("Number of guesses left : ",guesses)
     
   else:
     print("Checking your number...")
-    time.sleep(2)
+    time.sleep(1)
     print("Congratulations, your answer is correct! Your number is:",random_number)
     break
     
