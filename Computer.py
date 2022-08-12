@@ -217,5 +217,15 @@ class Computer:
         elif self.status == "Off":
             print("Computer is turned off, please open it to access the number guessing game...")
       
-          
+      def __str__(self):
+        return """
+        
+        Computer Specs:
+        
+        Applications: {}
+        Model: {}
+        Status: {}
+        OS: {}
+        
+        """.format(self.applications,self.model,self.status,self.os)
             
