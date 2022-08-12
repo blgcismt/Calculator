@@ -166,7 +166,7 @@ class Computer:
                     else:
                         print("Calculating...")
                         time.sleep(1)
-                        print("Factorial {} = {}".format(a, math.log(a)))
+                        print("Factorial {} = {}".format(a, math.factorial(a)))
                 else:
                     print("Invalid request! Please select a valid action.")
         elif self.status == "Off":
