@@ -315,7 +315,45 @@ class Computer:
             print(calendar.month(year,month))
         elif self.status == "Off":
             print("Computer is turned off, please turn it on to access this service...")
+    def delete_app(self):
+        if self.status == "On":
+            choice = input("Would you like to delete an application?(Y/N)")
 
+            if choice == "Y":
+                counter = 1
+                for x in self.applications:
+                    print("{}- {}".format(counter,x))
+                    counter +=1
+                action = int(input("Enter the number of the application you would like to delete..."))
+                print("Deleting the application...")
+                self.applications.pop(action-1)
+                time.sleep(3)
+                print("The application has been deleted...")
+                print(self.applications)
+
+            if choice == "N":
+                print("Exiting...")
+                print("Application deleting process has been exited...")
+        elif self.status == "Off":
+            print("Computer is turned off, please turn it on to access this service...")
+
+    def download_app(self):
+        if self.status == "On":
+            choice = input("Would you like to download an application?(Y/N)")
+
+            if choice == "Y":
+                app = input("Please enter the name of the application you would like to install...")
+                print("Installing the application...")
+                self.applications.append(app)
+                time.sleep(3)
+                print("The application has been successfully installed...")
+                print(self.applications)
+            elif choice == "N":
+                print("Exiting...")
+                print("Application downloading process has been exited...")
+
+        elif self.status == "Off":
+            print("Computer is turned off, please turn it on to access this service...")
             
 
 pc = Computer()
@@ -333,6 +371,8 @@ Actions you can take;
 7- Turn off the computer
 8- Show date and time
 9- Open calendar
+10- Download an application
+11- Delete an application
 
 
 0- Exit the code
@@ -369,6 +409,12 @@ while True:
     
     elif answer == 9:
         pc.show_calendar()
+        
+    elif answer == 10:
+        pc.download_app()
+
+    elif answer == 11:
+        pc.delete_app()
 
     elif answer == 0:
         print("Exiting the code...")
