@@ -292,6 +292,17 @@ class Computer:
             print("Computer Specs: \nApplications: {}\nModel: {}\nOS: {}\nStatus:{}\n".format(self.applications,self.model,self.os,self.status))
         elif self.status == "Off":
             print("Computer is turned off, please turn it on to access this service...")
+            
+            
+            
+    def show_date(self):
+        if self.status == "On":
+            time = datetime.datetime.now()
+            print("Current date and time :")
+            print(time.strftime("%Y-%m-%d %H:%M:%S"))
+        elif self.status == "Off":
+            print("Computer is turned off, please turn it on to access this service...")
+            
 
 pc = Computer()
 
@@ -335,6 +346,9 @@ while True:
 
     elif answer == 7:
         pc.close_pc()
+        
+    elif answer == 8:
+        pc.show_date()
 
     elif answer == 0:
         print("Exiting the code...")
