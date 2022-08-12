@@ -10,8 +10,6 @@ Welcome to the calculator...
 
 You can find the actions you can take below...
 
-İşlemler;
-
 1-Addition
 2-Substraction
 3-Multiplication
@@ -32,7 +30,7 @@ while True:
     action=int(input("Please choose your action:"))
     if action ==0:
         print("Exitting the program...")
-        sleep(1)
+        time.sleep(1)
         print("The calculator has been closed... See you later!")
         break
         
@@ -41,7 +39,7 @@ while True:
         a=float(input("Please enter your first number:"))
         b=float(input("Please enter your second number:"))
         print("Calculating...")
-        sleep(1)
+        time.sleep(1)
         print("{} + {} = {}".format(a,b,a+b))
         
     elif(action==2):
@@ -49,7 +47,7 @@ while True:
         a=float(input("Please enter the minuend:"))
         b=float(input("Please enter the subtrahend:"))
         print("Calculating...")
-        sleep(1)
+        time.sleep(1)
         print("{} - {} = {}".format(a,b,a-b)
               
     elif(action==3):
@@ -57,7 +55,7 @@ while True:
         a=float(input("Please enter the multiplicand:"))
         b=float(input("Please enter the multiplier"))
         print("Calculating...")
-        sleep(1)
+        time.sleep(1)
         print("{} x {} = {}".format(a,b,a*b))
      
      elif(action== 4):
@@ -65,7 +63,7 @@ while True:
         a=float(input("Please enter the dividend:"))
         b=float(input("Please enter the divisor:"))
         print("Calculating...")
-        sleep(1)
+        time.sleep(1)
         print("{} : {} = {}".format(a,b,a/b))
      
      elif(action==5):
@@ -75,7 +73,7 @@ while True:
             print("Invalid request!")
         else:
             print("Calculating...")
-            sleep(1)
+            time.sleep(1)
             print("The square root of {} is {}".format(a,a**0.5))
               
       elif(action==6):
@@ -87,7 +85,7 @@ while True:
             print("Invalid request!")
         else:
             print("Calculating...")
-            sleep(1)
+            time.sleep(1)
             print("{} to the power of {} is {}".format(a,b,pow(a,b)))
               
       elif(action==7):
@@ -97,7 +95,7 @@ while True:
             print("Invalid request!")
         else:
             print("Calculating...")
-            sleep(1)
+            time.sleep(1)
             print("Logarithm {} in base 10 equals {}:".format(a,log10(a)))
               
       elif(action==8):
@@ -110,7 +108,7 @@ while True:
             print("Invalid request!")
         else:
             print("Calculating...")
-            sleep(1)
+            time.sleep(1)
             print("Logarithm {} in base {} equals {}:".format(b,a,log(b,a)))
        
       elif(action==9):
@@ -120,7 +118,7 @@ while True:
             print("Invalid request!")
         else:
             print("Calculating...")
-            sleep(1)
+            time.sleep(1)
             print("Factorial {} = {}".format(a,factorial(a)))
     else:
         print("Invalid request! Please select a valid action.")
