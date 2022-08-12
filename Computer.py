@@ -1,6 +1,8 @@
 import time
 import random
 import math
+import datetime
+import calendar
 
 
 class Computer:
@@ -303,6 +305,18 @@ class Computer:
         elif self.status == "Off":
             print("Computer is turned off, please turn it on to access this service...")
             
+            
+    def show_calendar(self):
+        if self.status == "On":
+            year = int(input("Please enter the year:"))
+            print(""" Please enter the month in this format:
+             eg. 01- January, 02- February, 03- March 04- April, 05- May, 06- June, 07- July, 08- August, 09- September, 10- October, 11- November, 12- December""")
+            month = int(input("Please enter the month:"))
+            print(calendar.month(year,month))
+        elif self.status == "Off":
+            print("Computer is turned off, please turn it on to access this service...")
+
+            
 
 pc = Computer()
 
@@ -317,11 +331,14 @@ Actions you can take;
 5- Number guessing game
 6- Turn on the computer
 7- Turn off the computer
+8- Show date and time
+9- Open calendar
 
 
 0- Exit the code
 
 """)
+
 
 while True:
     answer = int(input("Please choose an action:"))
@@ -349,6 +366,9 @@ while True:
         
     elif answer == 8:
         pc.show_date()
+    
+    elif answer == 9:
+        pc.show_calendar()
 
     elif answer == 0:
         print("Exiting the code...")
