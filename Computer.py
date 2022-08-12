@@ -365,7 +365,7 @@ Actions you can take;
 1- Access the calculator
 2- Get specs
 3- Install an OS
-4- Delete an OS
+4- Delete your OS
 5- Number guessing game
 6- Turn on the computer
 7- Turn off the computer
