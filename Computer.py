@@ -218,6 +218,7 @@ class Computer:
             print("Computer is turned off, please open it to access the number guessing game...")
       
       def __str__(self):
+            
         return """
         
         Computer Specs:
@@ -228,4 +229,29 @@ class Computer:
         OS: {}
         
         """.format(self.applications,self.model,self.status,self.os)
+        
+ 
+      def remove_os(self):
+        if self.status == "On":
+            if len(self.os) == 1:
+                print("Your OS : {}".format(self.OS[0]))
+                action = input("Would you like to remove your operating system?(Y/N)")
+
+                if action == "Y":
+                    print("{} is being removed from your computer please wait...".format(self.OS[0]))
+                    time.sleep(3)
+                    self.os.pop(0)
+                    print("Your current operating system has been uninstalled you can select 'Install operating system' for a new operating system.")
+                elif action == "N":
+                    print("Exiting")
+                    time.sleep(1)
+                    print("OS removing process has been exited...")
+                else:
+                    print("Invalid request!")
+            else:
+                print("Computer does not have any operating system")
+        elif self.status == "Off":
+            print("Computer is off, please turn it on to access this service...")
+
+        
             
