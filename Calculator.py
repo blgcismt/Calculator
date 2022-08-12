@@ -1,6 +1,5 @@
 import time
-from math import *
-
+import math
 
 print("""
 
@@ -105,7 +104,7 @@ while True:
         else:
             print("Calculating...")
             time.sleep(1)
-            print("Logarithm {} in base 10 equals {}:".format(a, log10(a)))
+            print("Logarithm {} in base 10 equals {}:".format(a,math.log10(a)))
 
     elif action == 8 :
         
@@ -119,7 +118,7 @@ while True:
         else:
             print("Calculating...")
             time.sleep(1)
-            print("Logarithm {} in base {} equals {}:".format(b, a, log(b, a)))
+            print("Logarithm {} in base {} equals {}:".format(b, a,math.log(b, a)))
 
     elif action == 9:
         
@@ -130,7 +129,7 @@ while True:
         else:
             print("Calculating...")
             time.sleep(1)
-            print("Factorial {} = {}".format(a, factorial(a)))
+            print("Factorial {} = {}".format(a,math.factorial(a)))
     else:
         print("Invalid request! Please select a valid action.")
 
