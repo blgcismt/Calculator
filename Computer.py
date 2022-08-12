@@ -37,8 +37,6 @@ class Computer:
     def calculator(self):
 
         if self.status == "On":
-            import time
-            from math import *
 
             print("""
 
@@ -143,7 +141,7 @@ class Computer:
                     else:
                         print("Calculating...")
                         time.sleep(1)
-                        print("Logarithm {} in base 10 equals {}:".format(a, log10(a)))
+                        print("Logarithm {} in base 10 equals {}:".format(a, math.log10(a)))
 
                 elif action == 8:
 
@@ -157,7 +155,7 @@ class Computer:
                     else:
                         print("Calculating...")
                         time.sleep(1)
-                        print("Logarithm {} in base {} equals {}:".format(b, a, log(b, a)))
+                        print("Logarithm {} in base {} equals {}:".format(b, a, math.log(b, a)))
 
                 elif action == 9:
 
@@ -168,14 +166,14 @@ class Computer:
                     else:
                         print("Calculating...")
                         time.sleep(1)
-                        print("Factorial {} = {}".format(a, factorial(a)))
+                        print("Factorial {} = {}".format(a, math.log(a)))
                 else:
                     print("Invalid request! Please select a valid action.")
         elif self.status == "Off":
-            print("Computer is turned off, please open it to access the calculator...")
+            print("Computer is turned off, please turn it on to access this service...")
 
     def guessing_game(self):
-        
+
         if self.status == "On":
             print(""" 
             Welcome to the Number Guessing Game!
@@ -213,32 +211,31 @@ class Computer:
                 if guesses == 0:
                     print("You're out of guesses, you've lost the game!")
                     break
-                    
+
         elif self.status == "Off":
-            print("Computer is turned off, please open it to access the number guessing game...")
-      
-      def __str__(self):
-            
+            print("Computer is turned off, please turn it on to access this service...")
+
+    def __str__(self):
+
         return """
-        
+
         Computer Specs:
-        
+
         Applications: {}
         Model: {}
         Status: {}
         OS: {}
-        
-        """.format(self.applications,self.model,self.status,self.os)
-        
- 
-      def remove_os(self):
+
+        """.format(self.applications, self.model, self.status, self.os)
+
+    def remove_os(self):
         if self.status == "On":
             if len(self.os) == 1:
-                print("Your OS : {}".format(self.OS[0]))
+                print("Your OS : {}".format(self.os[0]))
                 action = input("Would you like to remove your operating system?(Y/N)")
 
                 if action == "Y":
-                    print("{} is being removed from your computer please wait...".format(self.OS[0]))
+                    print("{} is being removed from your computer please wait...".format(self.os[0]))
                     time.sleep(3)
                     self.os.pop(0)
                     print("Your current operating system has been uninstalled you can select 'Install operating system' for a new operating system.")
@@ -251,15 +248,15 @@ class Computer:
             else:
                 print("Computer does not have any operating system")
         elif self.status == "Off":
-            print("Computer is off, please turn it on to access this service...")
+            print("Computer is turned off, please turn it on to access this service...")
 
     def download_os(self):
         if self.status == "On":
             if self.os == list():
-                answer = input("You currently do not have an operating system. Would you like to download one?(Y/N")
+                answer = input("You currently do not have an operating system. Would you like to download one?(Y/N)")
                 if answer == "Y":
                     operating_systems = ["Microsoft Windows","macOS","Linux"]
-                    counter = 0
+                    counter = 1
                     for x in operating_systems:
                         print("{}- {}".format(counter,x))
                         counter += 1
@@ -290,5 +287,60 @@ class Computer:
         elif self.status == "Off":
             print("Computer is turned off, please turn it on to access this service...")
 
+    def show_specs(self):
+        if self.status == "On":
+            print("Computer Specs: \nApplications: {}\nModel: {}\nOS: {}\nStatus:{}\n".format(self.applications,self.model,self.os,self.status))
+        elif self.status == "Off":
+            print("Computer is turned off, please turn it on to access this service...")
+
+pc = Computer()
+
+print(""" 
+
+Actions you can take;
+
+1- Access the calculator
+2- Get specs
+3- Install an OS
+4- Delete an OS
+5- Number guessing game
+6- Turn on the computer
+7- Turn off the computer
+
+
+0- Exit the code
+
+""")
+
+while True:
+    answer = int(input("Please choose an action:"))
+
+    if answer == 1:
+        pc.calculator()
+
+    elif answer == 2:
+        pc.show_specs()
+
+    elif answer == 3:
+        pc.download_os()
+
+    elif answer == 4:
+        pc.remove_os()
+
+    elif answer == 5:
+        pc.guessing_game()
+
+    elif answer == 6:
+        pc.open_pc()
+
+    elif answer == 7:
+        pc.close_pc()
+
+    elif answer == 0:
+        print("Exiting the code...")
+        break
+
+    else:
+        print("Invalid request...")
         
             
