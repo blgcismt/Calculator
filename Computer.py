@@ -7,8 +7,8 @@ import calendar
 
 class Computer:
     def __init__(self, status="Off", os=["macOS"], model="Macbook Pro",
-                 applications=["""Safari", "Spotify", "Discord", "Steam", "Pycharm", "Netbeans","Zoom",
-                 "Adobe Acrobat Reader DC","Microsoft Word","Microsoft Excel","Microsoft PowerPoint","Photos"""]):
+                  applications=["Safari", "Spotify", "Discord", "Steam", "Pycharm", "Netbeans","Zoom","Adobe Acrobat Reader DC","Microsoft Word","Microsoft Excel","Microsoft PowerPoint","Photos"]):
+
 
         self.status = status
         self.os = os
