@@ -253,5 +253,42 @@ class Computer:
         elif self.status == "Off":
             print("Computer is off, please turn it on to access this service...")
 
+    def download_os(self):
+        if self.status == "On":
+            if self.os == list():
+                answer = input("You currently do not have an operating system. Would you like to download one?(Y/N")
+                if answer == "Y":
+                    operating_systems = ["Microsoft Windows","macOS","Linux"]
+                    counter = 0
+                    for x in operating_systems:
+                        print("{}- {}".format(counter,x))
+                        counter += 1
+                    action = int(input("Please enter the number of the OS you want to install..."))
+
+                    if action == 1:
+                        print("{} is being installed,please wait".format(operating_systems[0]))
+                        time.sleep(3)
+                        self.os.append("Microsoft Windows")
+                        print("Your installment has been successfully completed... Your operating system now is: {}".format(self.os[0]))
+
+                    elif action == 2:
+                        print("{} is being installed,please wait".format(operating_systems[1]))
+                        time.sleep(3)
+                        self.os.append("macOS")
+                        print("Your installment has been successfully completed... Your operating system now is: {}".format(self.os[0]))
+                    elif action == 3:
+                        print("{} is being installed,please wait".format(operating_systems[2]))
+                        time.sleep(3)
+                        self.os.append("Linux")
+                        print("Your installment has been successfully completed... Your operating system now is: {}".format(self.os[0]))
+            elif len(self.os)>0:
+                print("You already have an operating system, you  need to uninstall your current one to install a new one")
+                print("Exiting Program...")
+                time.sleep(1)
+                print("OS installing process has been exited...")
+
+        elif self.status == "Off":
+            print("Computer is turned off, please turn it on to access this service...")
+
         
             
