@@ -35,7 +35,7 @@ while True :
   else:
     print("Checking your number...")
     time.sleep(1)
-    print("Congratulations, your answer is correct! Your number is:",random_number)
+    print("Congratulations, your answer is correct! The number is:",random_number)
     break
     
   if guesses == 0 :
