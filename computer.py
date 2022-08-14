@@ -48,7 +48,7 @@ class Computer:
 
             Welcome to the calculator...
 
-            You can find the actions you can take below...
+            Operations;
 
             1-Addition
             2-Subtraction
@@ -67,7 +67,7 @@ class Computer:
             """)
 
             while True:
-                action = int(input("Please choose your action:"))
+                action = int(input("Please choose your operation:"))
 
                 if action == 0:
                     print("Exiting the program...")
