@@ -1,1 +1,1 @@
-# In this repository you can find some code I wrote while learning Python.
+# In this repository you can find some projects of my own demonstrating my skills on various programming languages.
