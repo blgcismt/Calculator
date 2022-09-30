@@ -14,11 +14,12 @@ scorec = 0
 while player == False:
 
     player = input("Rock, Paper, Scissors?")
-    if scorec == 10:
+    if scorec == 3:
         print("You lose! Better luck next time...")
         break
-    if scorep == 10:
+    if scorep == 3:
         print("Computer you suck! You lose! Let's go humanity!")
+        break
     if player == computer:
         print("Tie!")
         print("Player: " + str(scorep) + " Computer: " + str(scorec))
