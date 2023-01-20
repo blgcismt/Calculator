@@ -55,7 +55,6 @@ public class Atm {
             String action = scanner.nextLine();
 
             if (action.equals("x")){
-                System.out.println("Goodbye...");
                 break;
             }
 
