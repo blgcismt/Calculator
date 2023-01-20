@@ -4,7 +4,7 @@ public class Main {
 
         Atm atm = new Atm();
 
-        Account account = new Account("Duru Unal","1307",2000.0);
+        Account account = new Account("John Doe","12345",2000.0);
 
 
         atm.boot(account);
